@@ -10,8 +10,6 @@ export default class View extends React.Component {
     }
   }
 
-
-
   componentWillReceiveProps(nextProps) {
     let playerTurn = nextProps.gameView.playerTurn ? 'Y' : "X";
     let arrayData = playerTurn === 'X' ? nextProps.gameView.playerX : nextProps.gameView.playerY;
@@ -21,7 +19,6 @@ export default class View extends React.Component {
       case (arrayData.length === 3):
         if (nextProps.gameView.gameWinner.indexOf(arrayData.sort().toString()) >= 0) {
           this.setState({ gameMessage: `Win player ${playerTurn}` })
-          console.log('success' + '///' + playerTurn);
           break;
         }
         break
@@ -29,9 +26,9 @@ export default class View extends React.Component {
         let str = arrayData.sort().toString();
         for (var index = 0; index < arrayData.length; index++) {
           let changeStr = str.replace(arrayData[index] + ',', '');
-          if (nextProps.gameView.gameWinner.indexOf(changeStr)) {
+          if (nextProps.gameView.gameWinner.indexOf(changeStr) >= 0) {
+            console.log(changeStr);
             this.setState({ gameMessage: `Win player ${playerTurn}` })
-            console.log('success' + ' /// ' + playerTurn);
             break;
           }
         }
@@ -53,7 +50,6 @@ export default class View extends React.Component {
   }
 
   render() {
-
     return (
       <div>
         <section className='game'>

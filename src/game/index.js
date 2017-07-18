@@ -21,36 +21,6 @@ export default class Game extends React.Component {
   }
 
 
-  // componentWillUpdate(nextProps, nextState) {
-  //   let playerTurn = nextState.game.playerTurn ? 'Y' : "X";
-  //   let arrayData = playerTurn === 'X' ? nextState.game.playerX : nextState.game.playerY;
-  //   switch (true) {
-  //     case (arrayData.length === 2):
-  //       break;
-  //     case (arrayData.length === 3):
-  //       if (nextState.game.gameWinner.indexOf(arrayData.sort().toString()) >= 0) {
-  //         this.setState({ game: { ...this.state.game, gameMessage: `Win player ${playerTurn}` } })
-  //         console.log('success' + '///' + playerTurn);
-  //         break;
-  //       }
-  //       break
-  //     case (arrayData.length > 3):
-  //       let str = arrayData.sort().toString();
-  //       for (var index = 0; index < arrayData.length; index++) {
-  //         let changeStr = str.replace(arrayData[index] + ',', '');
-  //         if (nextState.game.gameWinner.indexOf(changeStr)) {
-  //           this.setState({ game: { ...this.state.game, gameMessage: `Win player ${playerTurn}` } })
-  //           console.log('success' + ' /// ' + playerTurn);
-  //           break;
-  //         }
-  //       }
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // }
-
-
 
   handleClick(event, index, gameMessage) {
     if (gameMessage) return false;
@@ -97,7 +67,6 @@ export default class Game extends React.Component {
 
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <View childState={this.clearState.bind(this)} child={(event, index, gameMessage) => this.handleClick(event, index, gameMessage)} gameView={this.state.game} />
