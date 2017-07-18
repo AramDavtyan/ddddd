@@ -1,0 +1,31 @@
+.game{
+  width: 210px;
+}
+
+.game > div{
+  border: 1px solid #ccc;
+  width: 60px;
+  height: 60px;
+  float: left;
+  text-align: center;
+  line-height: 60px;
+}
+
+.game > div:hover{
+  cursor: pointer;
+}
+
+.error{
+  position: absolute;
+    top: 320px;
+    border: 1px solid rgba(255, 0, 0, 0.22);
+    padding: 20px;
+    background: rgba(255, 0, 0, 0.11);
+}
+.playerTurn{
+    position: absolute;
+    top: 239px;
+    border: 1px solid rgba(0, 255, 67, 0.22);
+    padding: 20px;
+    background: rgba(38, 173, 22, 0.31);
+}
